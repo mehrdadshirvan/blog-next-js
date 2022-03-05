@@ -1,12 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Header from './components/header'
-import styles from '../styles/Home.module.css'
+import Header from './../components/header'
 import 'bootstrap/dist/css/bootstrap-grid.rtl.min.css'
 import 'bootstrap/dist/css/bootstrap.rtl.min.css'
-import Footer from "./components/footer";
+import Footer from "./../components/footer";
 
-function Home(props) {
+function Post(props) {
 
     const {posts} = props;
     console.log(posts)
@@ -35,4 +34,4 @@ export async function getServerSideProps(context) {
     }
 }
 
-export default Home;
+export default Post;

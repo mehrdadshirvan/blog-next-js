@@ -16,8 +16,8 @@ function Header (props) {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/blog/hello-world">
-                                <a>Blog Post</a>
+                            <Link href="/post">
+                                <a>post</a>
                             </Link>
                         </li>
                     </ul>
