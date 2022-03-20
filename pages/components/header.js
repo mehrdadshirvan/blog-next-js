@@ -2,10 +2,10 @@ import Link from 'next/link';
 function Header (props) {
     return (
         <>
-            <header>
+            <header className={`bg-white shadow-sm header-height`}>
                 <div className={`container-fluid`}>
-                    <ul>
-                        <li>
+                    <ul className={`nav-main-menu`}>
+                        <li className={`active`}>
                             <Link href="/">
                                 <a>Home</a>
                             </Link>

@@ -1,0 +1,20 @@
+.header-height{
+    height: 50px;
+}
+.nav-main-menu{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.nav-main-menu li {}
+.nav-main-menu li a{
+    float: left;
+    display: inline-block;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: #313131;
+    font-size: 18px;
+}
+.nav-main-menu li.active{
+    font-weight: 600;
+}

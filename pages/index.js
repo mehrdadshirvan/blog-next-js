@@ -9,8 +9,6 @@ import Footer from "./components/footer";
 function Home(props) {
 
     const {posts} = props;
-    console.log(posts)
-
     return (
         <div id={`app`}>
             <Head>
