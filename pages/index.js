@@ -19,20 +19,11 @@ function Home(props) {
                       content="home"/>
             </Head>
             <Header/>
-
-            {posts.map((post) => (<p>{post.title}</p>))}
+            <h1>Home</h1>
             <Footer/>
         </div>
     )
 }
 
-
-export async function getServerSideProps(context) {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
-    const posts = await res.json()
-    return {
-        props: {posts}, // will be passed to the page component as props
-    }
-}
 
 export default Home;

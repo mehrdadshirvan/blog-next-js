@@ -6,20 +6,18 @@ import 'bootstrap/dist/css/bootstrap.rtl.min.css'
 import Footer from "./../components/footer";
 import Link from 'next/link';
 
-function Posts(props) {
-
-    const {posts} = props;
-
+function Post(props) {
+    const {post} = props;
     return (
         <div id={`app`}>
             <Head>
-                <title>Home</title>
+                <title>{post.title}</title>
                 <meta name="description"
                       content="home"/>
             </Head>
             <Header/>
-
-            {posts.map((post) => (<><Link href={`post/${post.id}`}><a>{post.title}</a></Link><hr/></>))}
+            <h1>{post.title}</h1>
+            <p>{post.body}</p>
             <Footer/>
         </div>
     )
@@ -27,11 +25,13 @@ function Posts(props) {
 
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
-    const posts = await res.json()
+
+    const url = 'https://jsonplaceholder.typicode.com/posts/' + context.query.id
+    const res = await fetch(url)
+    const post = await res.json()
     return {
-        props: {posts}, // will be passed to the page component as props
+        props: {post}, // will be passed to the page component as props
     }
 }
 
-export default Posts;
+export default Post;
