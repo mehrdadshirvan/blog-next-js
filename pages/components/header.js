@@ -1,11 +1,11 @@
 import Link from 'next/link';
-function Header (props) {
+function Header (props,context) {
     return (
         <>
             <header className={`bg-white shadow-sm header-height`}>
-                <div className={`container-fluid`}>
+                <div className={`container`}>
                     <ul className={`nav-main-menu`}>
-                        <li className={`active`}>
+                        <li className={``}>
                             <Link href="/">
                                 <a>Home</a>
                             </Link>

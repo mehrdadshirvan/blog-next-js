@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap-grid.rtl.min.css'
 import 'bootstrap/dist/css/bootstrap.rtl.min.css'
 import Footer from "./../components/footer";
 import Link from 'next/link';
+import PostCard from "./PostCard";
 
 function Posts(props) {
 
@@ -18,8 +19,19 @@ function Posts(props) {
                       content="home"/>
             </Head>
             <Header/>
+            <div className={`container my-4`}>
+                <div className={`row`}>
+                    <div className={`col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12`}>
+                        side bar
+                    </div>
+                    <div className={`col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12`}>
+                       <div className={`row`}>
+                           { posts.map((post) => <PostCard post={post} />) }
+                       </div>
+                    </div>
+                </div>
+            </div>
 
-            {posts.map((post) => (<><Link href={`post/${post.id}`}><a>{post.title}</a></Link><hr/></>))}
             <Footer/>
         </div>
     )

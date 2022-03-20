@@ -5,6 +5,8 @@ import styles from '../styles/Home.module.css'
 import 'bootstrap/dist/css/bootstrap-grid.rtl.min.css'
 import 'bootstrap/dist/css/bootstrap.rtl.min.css'
 import Footer from "./components/footer";
+import {Carousel} from "react-bootstrap";
+import Slider from "./components/home/slider";
 
 function Home(props) {
 
@@ -17,7 +19,9 @@ function Home(props) {
                       content="home"/>
             </Head>
             <Header/>
-            <h1>Home</h1>
+            <div className={`container`}>
+                <Slider />
+            </div>
             <Footer/>
         </div>
     )
