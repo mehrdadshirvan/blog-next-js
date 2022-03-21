@@ -23,11 +23,14 @@ function Posts(props) {
                 <div className={`row`}>
                     <div className={`col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12`}>
                        <div className={`row`}>
+                           {/* eslint-disable-next-line react/jsx-key */}
                            { posts.map((post) => <PostCard post={post} />) }
                        </div>
                     </div>
                     <div className={`col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12`}>
-                        <CategoryList />
+                        <div key={`cat-0`}>
+                            <CategoryList  key={0} />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -4,15 +4,19 @@ import {TiChevronRight} from "react-icons/ti";
 
 const PostCard = ({post}) => {
     return (
-        <div className={`col-12`}>
+        <div className={`col-12`} key={`p-${post.id}`}>
             <div className={`card mb-2 `}>
-                <div className={`row`}
-                     key={post.id}>
+                <div className={`row`} >
                     <div className={`col-sm-2 col-12`}>
                         <div className={`p-2`}>
-                            <img src="https://www.mehrdadshirvan.ir/public/images/mehrdad-shirvan-1.jpg"
-                                 alt={post.title}
-                                 className={`w-100 rounded overflow-hidden`}/>
+                            <div className={`w-100 h-100 position-relative`}>
+                                <Image src="https://www.mehrdadshirvan.ir/public/images/mehrdad-shirvan-1.jpg"
+                                       alt={post.title}
+                                       width="100%"
+                                       height="100px"
+                                       className={`w-100 rounded overflow-hidden`}
+                                />
+                            </div>
                         </div>
                     </div>
                     <div className={`col-sm-10 col-12 px-0 py-2 d-grid align-content-between`}>

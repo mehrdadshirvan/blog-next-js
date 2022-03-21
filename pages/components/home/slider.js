@@ -1,4 +1,5 @@
 import {Carousel} from "react-bootstrap";
+import Image from "next/image";
 
 function Slider(props){
 
@@ -8,21 +9,22 @@ function Slider(props){
                 <div className={`col-12`}>
                     <Carousel>
                         <Carousel.Item interval={3500}>
-                            <img
-                                className="d-block w-100"
-                                src="https://www.rosena.ir/public/files/slider/46456.jpg?_t=1587774264"
-                                alt="First slide"
-                            />
+                            <Image src="https://www.rosena.ir/public/files/slider/46456.jpg"
+                                   alt="First slide"
+                                   width="1200px"
+                                   height="400px"
+                                   className={`d-block w-100`}/>
                             <Carousel.Caption>
                                 <h3>First slide label</h3>
                                 <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item interval={3500}>
-                            <img
-                                className="d-block w-100"
-                                src="https://www.rosena.ir/public/files/slider/469.jpg?_t=1587774264"
-                                alt="Second slide"
+                            <Image src="https://www.rosena.ir/public/files/slider/469.jpg"
+                                   alt="Second slide"
+                                   width="1200px"
+                                   height="400px"
+                                   className={`d-block w-100`}
                             />
                             <Carousel.Caption>
                                 <h3>Second slide label</h3>
