@@ -1,6 +1,7 @@
 import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import Link from 'next/link';
+import {TiChevronRight} from "react-icons/ti";
 
 const PostSwiperSliderCard = ({post}) => {
     return (
@@ -18,7 +19,7 @@ const PostSwiperSliderCard = ({post}) => {
                 </div>
             </div>
             <div className={`p-2`}>
-                <p style={{minHeight: '50px'}}>
+                <p style={{minHeight: '51px'}}>
                     <Link href={`post/${post.id}`}>
                         <a className={`text-decoration-none text-secondary font-15 text-justify`}
                            title={post.title}>{post.title.substring(0, 45)}...
@@ -28,7 +29,7 @@ const PostSwiperSliderCard = ({post}) => {
                 <p className={`mb-0 text-start`}>
                     <Link href={`post/${post.id}`}>
                         <a className={`text-decoration-none text-primary font-11 text-justify`}>
-                            Show more >
+                            Show more <TiChevronRight />
                         </a>
                     </Link>
                 </p>
