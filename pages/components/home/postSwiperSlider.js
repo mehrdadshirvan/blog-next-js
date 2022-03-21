@@ -2,12 +2,14 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 import 'swiper/css';
 import PostSwiperSliderCard from "./postSwiperSliderCard";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import {BsBookmarks, IconName} from "react-icons/bs";
 
 const PostSwiperSlider = ({posts,title}) => {
     return (
         <div className={`mb-4`}>
             <div className={`row`}>
-                <h3>
+                <h3 className={`font-18`}>
+                    <BsBookmarks />
                     {title}
                 </h3>
             </div>
