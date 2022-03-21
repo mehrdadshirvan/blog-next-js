@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap-grid.rtl.min.css'
 import 'bootstrap/dist/css/bootstrap.rtl.min.css'
 import Footer from "./../components/footer";
 import Link from 'next/link';
+import PostCard from "./postCard";
 
 function Post(props) {
     const {post} = props;
@@ -12,12 +13,43 @@ function Post(props) {
         <div id={`app`}>
             <Head>
                 <title>{post.title}</title>
-                <meta name="description"
-                      content="home"/>
+                <meta name="description" content={post.title}/>
             </Head>
             <Header/>
-            <h1>{post.title}</h1>
-            <p>{post.body}</p>
+            <div className={`container my-3`}>
+                <div className={`row`}>
+                    <div className={`col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12`}>
+                        <div className={`row`}>
+                            <div className={`card px-0`}>
+                                <div className={`card-header`}>
+                                    <h1 className={`font-18 `}>{post.title}</h1>
+                                </div>
+                                <div className={`card-body`}>
+                                    {post.body}
+                                    {post.body}
+                                    {post.body}
+                                    {post.body}
+                                    {post.body}
+                                    {post.body}
+                                    {post.body}
+                                </div>
+                                <div className={`card-footer`}>
+                                    <div className={`row`}>
+                                        <div className={`col-sm-12`}>
+                                            <p className={`text-start m-0 `}>
+                                                { new Date().toDateString() }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={`col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12`}>
+                        side bar
+                    </div>
+                </div>
+            </div>
             <Footer/>
         </div>
     )

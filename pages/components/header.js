@@ -11,7 +11,8 @@ function Header (props,context) {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/about">
+                            <Link href="/about
+                            ">
                                 <a>About Us</a>
                             </Link>
                         </li>
