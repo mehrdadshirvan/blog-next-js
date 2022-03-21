@@ -4,7 +4,7 @@ import PostSwiperSliderCard from "./postSwiperSliderCard";
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import {BsBookmarks, IconName} from "react-icons/bs";
 
-const PostSwiperSlider = ({posts,title}) => {
+const PostSwiperSlider = ({posts,title,slidesPerView = 5}) => {
     return (
         <div className={`mb-4`}>
             <div className={`row`}>
@@ -14,7 +14,7 @@ const PostSwiperSlider = ({posts,title}) => {
                 </h3>
             </div>
             <Swiper spaceBetween={20}
-                    slidesPerView={5}
+                    slidesPerView={slidesPerView}
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     navigation
                     pagination={{ clickable: true }}

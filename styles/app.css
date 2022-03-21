@@ -35,7 +35,38 @@ a {
     text-decoration: none;
     color: #313131;
     font-size: 18px;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+.nav-main-menu li a:hover{
+    font-weight: 600;
 }
 .nav-main-menu li.active{
     font-weight: 600;
 }
+.form-group{
+    margin-bottom: 10px;
+}
+.category-list-sidebar{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.category-list-sidebar li{
+
+}
+.category-list-sidebar li a{
+    display: block;
+    padding: 7px 20px;
+    text-decoration: none;
+    color: #313131;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 300;
+    transition: all 0.5s ease;
+}
+.category-list-sidebar li a:hover{
+    padding-left:25px;
+    font-weight: 600;
+}
+.category-list-sidebar li span{}

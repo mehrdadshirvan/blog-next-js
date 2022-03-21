@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.rtl.min.css'
 import Footer from "./../components/footer";
 import Link from 'next/link';
 import PostCard from "./postCard";
+import CategoryList from "../components/CategoryList";
 
 function Posts(props) {
 
@@ -20,13 +21,13 @@ function Posts(props) {
             <Header/>
             <div className={`container my-3`}>
                 <div className={`row`}>
-                    <div className={`col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12`}>
-                        side bar
-                    </div>
                     <div className={`col-xl-9 col-lg-9 col-md-12 col-sm-12 col-xs-12`}>
                        <div className={`row`}>
                            { posts.map((post) => <PostCard post={post} />) }
                        </div>
+                    </div>
+                    <div className={`col-xl-3 col-lg-3 col-md-12 col-sm-12 col-xs-12`}>
+                        <CategoryList />
                     </div>
                 </div>
             </div>
