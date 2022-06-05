@@ -17,7 +17,7 @@ function Login(props) {
     return (
         <div id={`app`}>
             <Head>
-                <title>Login</title>
+                <title>Login here 4</title>
                 <meta name="description"
                       content="Login & register to blog now"/>
             </Head>
