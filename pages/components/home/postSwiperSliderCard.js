@@ -24,14 +24,14 @@ const PostSwiperSliderCard = ({post}) => {
             </div>
             <div className={`p-2`}>
                 <p style={{minHeight: '51px'}}>
-                    <Link href={`post/${post.id}`}>
+                    <Link href={`/post/${post.id}`}>
                         <a className={`text-decoration-none text-secondary font-15 text-justify`}
                            title={post.title}>{post.title.substring(0, 40)}...
                         </a>
                     </Link>
                 </p>
                 <p className={`mb-0 text-start`}>
-                    <Link href={`post/${post.id}`}>
+                    <Link href={`/post/${post.id}`}>
                         <a className={`text-decoration-none text-primary font-11 text-justify`}>
                             Show more <TiChevronRight />
                         </a>
