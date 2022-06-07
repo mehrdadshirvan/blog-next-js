@@ -6,13 +6,45 @@ import 'bootstrap/dist/css/bootstrap.rtl.min.css'
 import Footer from "./../components/footer";
 import {FiLogIn} from "react-icons/fi";
 import Link from "next/link"
+import {useState} from "react";
+// import fetch from "node-fetch";
+// import Cors from 'cors';
+// import nextConnect from 'next-connect';
+
+//const connection = nextConnect();
 
 function Login(props) {
 
+    const [form, setForm] = useState({
+        'email': "mohammad@gmail.com",
+        'password': "12345678"
+    });
 
-    const LoginUser = async event => {
-        event.preventDefault()
+    const submitHandler = async (event) => {
+        event.preventDefault();
+        let res = await fetch('https://new.visapickmap.com/api/panel/v1/user/login', {
+            method: "POST",
+            body: JSON.stringify(form),
+            redirect: 'follow',
+            headers: {'Accept':'application/json','Content-Type':'application/json'},
+        });
+        res = await res.json();
+        // if(res.statusCode === 200){
+            console.log(res)
+        //     localStorage.setItem('_ut', '1')
+        // }else{
+        //     localStorage.removeItem('_ut');
+        // }
     }
+
+    const SetData = (event) => {
+        // console.log(event.target.name, event.target.value)
+        setForm({
+            ...form,
+            [event.target.name]: event.target.value,
+        })
+    }
+
 
     return (
         <div id={`app`}>
@@ -33,7 +65,7 @@ function Login(props) {
                                 <div className={`card-body`}>
                                     <form action="#"
                                           method="POST"
-                                          onSubmit={LoginUser}>
+                                          onSubmit={submitHandler}>
                                         <div className="row">
                                             <div className="col-md-12">
                                                 <div className="form-group">
@@ -41,10 +73,12 @@ function Login(props) {
                                                         Email/Username or mobile
                                                         <span className="text-danger px-1">*</span>
                                                     </label>
-                                                    <input id="name"
-                                                           name="name"
+                                                    <input id="email"
+                                                           name="email"
                                                            type="text"
-                                                           autoComplete="name"
+                                                           value={form.email}
+                                                           onChange={SetData}
+                                                           autoComplete="email"
                                                            className="form-control"
                                                            required/>
                                                 </div>
@@ -55,10 +89,12 @@ function Login(props) {
                                                         Password
                                                         <span className="text-danger px-1">*</span>
                                                     </label>
-                                                    <input id="name"
-                                                           name="name"
+                                                    <input id="password"
+                                                           name="password"
                                                            type="text"
-                                                           autoComplete="name"
+                                                           value={form.password}
+                                                           onChange={SetData}
+                                                           autoComplete="password"
                                                            className="form-control"
                                                            required/>
                                                 </div>
@@ -66,7 +102,8 @@ function Login(props) {
                                         </div>
                                         <div className="row">
                                             <div className="col">
-                                                <button type="submit" className="btn btn-success px-4 m-auto d-block">
+                                                <button type="submit"
+                                                        className="btn btn-success px-4 m-auto d-block">
                                                     Login
                                                     <FiLogIn className={`mx-1`}/>
                                                 </button>
@@ -88,7 +125,6 @@ function Login(props) {
                     </div>
                 </div>
             </div>
-
             <Footer/>
         </div>
     )
